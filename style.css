@@ -36,7 +36,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: end;
-    gap: 15px;
+    gap: 20px;
     padding: 10px;
 }
 
@@ -66,10 +66,10 @@ body{
 }
 
 #button-clear{
-    background-color: rgb(159, 176, 252);
+    background-color: rgb(252, 159, 159);
     text-align: center;
     height: 70px;
-    width: 173px;
+    width: 356px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -78,7 +78,7 @@ body{
 }
 
 #button-clear:hover{
-    background-color: rgba(159, 176, 252,0.5);
+    background-color: rgba(252, 159, 159,0.7);
 }
 
 #button-delete{
@@ -98,7 +98,7 @@ body{
 }
 
 
-.button{
+button{
     background-color: #ffffff;
     border-radius: 5px;
     text-align: center;
@@ -110,6 +110,6 @@ body{
     font-size: 1.4em;
 }
 
-.button:hover{
+button:hover{
     background-color: rgba(255, 255, 255,0.7);
 }
