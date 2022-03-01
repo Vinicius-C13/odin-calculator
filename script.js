@@ -5,12 +5,12 @@ const numbers_button = document.querySelectorAll('.num-button');
 const operators_button = document.querySelectorAll('.op-button');
 const equalTo_button = document.querySelector('#vequ');
 const clearAll_button = document.querySelector('#button-clear')
+const changeSignal_button = document.querySelector('#button-signal')
 
 let firstNum ='';
 let secondNum ='';
 let operator = '';
 let total = ''
-
 
 //Add a event listener to get the value of all number buttons
 numbers_button.forEach(function(item){
@@ -37,7 +37,7 @@ operators_button.forEach((item)=>{
     });
 });
 
-//Operation functions. The operation function calls just one one this function depending on the operator value.
+//Operation functions. The operation function calls just one this function depending on the operator value.
 //This function solves the account and calls the function prepNewOp() when it's done with the result
 // of the account as a parameter.
 function calcAdd(a,b){
@@ -55,6 +55,11 @@ function calcMult(a,b){
     display_div.textContent = total;
     return prepNewOp(total);
 };
+function calcPerCent(a,b){
+    total = (a/100)*b;
+    display_div.textContent = total;
+    return prepNewOp(total);
+};
 function calcDiv(a,b){    
     total = a/b;
     display_div.textContent = total;
@@ -62,7 +67,7 @@ function calcDiv(a,b){
         return prepNewOp('')
     }
     return prepNewOp(total);
-    };
+};
 
 //This function decides witch operation should happens based in operator variable value.
 //I think that use switch condicional would be better in this case.
@@ -78,6 +83,9 @@ function operation(num1, num2, op){
     };
     if(op == ':'){
         return calcDiv(num1,num2);
+    };
+    if(op == '%'){
+        return calcPerCent(num1,num2);
     };
 };
 
@@ -120,3 +128,32 @@ function clear(){
 };
 
 clear()
+
+//This function serves to change the signal of a number. To know how number change the value,
+//this function checks if the operator is already in the account or not and knows witch number is the correct based in this info
+//This function checks if the value is 0 or undefined too, this is important to avoid errors with division by 0.
+
+function changeSignal(){
+    changeSignal_button.addEventListener('click', ()=>{
+
+        if(operator === ''){
+            if(firstNum == 0|| firstNum == ''){
+                console.log('you can\'t change the sign of zero or of an nonexistent number.')
+            }
+            else{
+            firstNum *=-1;
+            display_div.textContent = firstNum;
+            }
+        }
+        else{
+            if(secondNum == 0|| secondNum == ''){
+                console.log('you can\'t change the sign of zero or of an nonexistent number.')
+            }
+            else{
+            secondNum *=-1;
+            display_div.textContent = `${firstNum} ${operator} ${secondNum}`;
+            };
+        };
+    });
+};
+changeSignal();
