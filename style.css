@@ -67,36 +67,11 @@ body{
 
 #button-clear{
     background-color: rgb(252, 159, 159);
-    text-align: center;
-    height: 70px;
-    width: 356px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
 }
 
 #button-clear:hover{
     background-color: rgba(252, 159, 159,0.7);
 }
-
-#button-delete{
-    background-color: rgb(252, 159, 159);
-    text-align: center;
-    height: 70px;
-    width: 173px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-}
-
-#button-delete:hover{
-    background-color: rgba(252, 159, 159,0.7);
-}
-
 
 button{
     background-color: #ffffff;
@@ -107,7 +82,29 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.4em;
+    font-size: 1.6em;
+}
+
+.op-button, #button-signal{
+    background-color: #a6a5e7
+}
+
+.op-button:hover, #button-signal:hover{
+    background-color: rgba(166, 165, 231, 0.5)
+}
+
+#v0{
+    width: 173px;
+}
+
+#vequ{
+    background-color: #63628b;
+    color: #ffffff;
+}
+
+#vequ:hover{
+    background-color: rgba(98, 97, 137, 0.7);
+    color: #ffffff;
 }
 
 button:hover{
