@@ -58,7 +58,7 @@ function calcMult(a,b){
 function calcDiv(a,b){    
     total = a/b;
     display_div.textContent = total;
-    if(b == 0){
+    if(b == 0){               //This serves when the result of the account is equals to 'infinity'.
         return prepNewOp('')
     }
     return prepNewOp(total);
@@ -120,4 +120,3 @@ function clear(){
 };
 
 clear()
-
