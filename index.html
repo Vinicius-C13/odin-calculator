@@ -4,40 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>odin-calculator</title>
-    <link href="style.css" rel="stylesheet">
+    <title>Odin - Calculadora</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link 
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" 
+        rel="stylesheet"
+    >
+
     <script src="script.js" defer></script>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="container">
-        <div class="display-calc">
-            <div id="display-operation"></div>
-            <div id="display-currentNum"></div>
+    <div class="calc">
+        <div class="calc--header">
+            <div class="logo">calc</div>
+            <div class="theme">
+                <span class="span-1">THEME</span>
+                <span class="span-2">1</span>
+                <span class="span-3">2</span>
+                <span class="span-4">3</span>
+                <input class="selection-bar" type="range" min="1" max="3" value="1" onchange="changeMode(event.target.value)">
+            </div>
         </div>
-        <div class="buttons">
-            <button id="button-clear" >Del</button>
-            <button id="button-signal" >+/-</button>
-            <button id="button-percent" class="op-button">%</button>
-            <button id="vdiv" class="op-button">:</button>
-            <button id="v7" class="num-button">7</button>
-            <button id="v8" class="num-button">8</button>
-            <button id="v9" class="num-button">9</button>
-            <button id="vmult" class="op-button">x</button>
-            <button id="v4" class="num-button">4</button>
-            <button id="v5" class="num-button">5</button>
-            <button id="v6" class="num-button">6</button>
-            <button id="vsub" class="op-button">-</button>
-            <button id="v1" class="num-button">1</button>
-            <button id="v2" class="num-button">2</button>
-            <button id="v3" class="num-button">3</button>
-            <button id="vsum" class="op-button">+</button>
-            <button id="v0" class="num-button">0</button>
-            <button id="vdot" class="num-button">.</button>
-            <button id="vequ">=</button>
-            
+        <div class="calc--display">
+            <div id="display-operation"></div>
+            <div id="display-currentNum"></div> 
+        </div>
+        <div class="calc--buttons">
+            <div class="btn">7</div>
+            <div class="btn">8</div>
+            <div class="btn">9</div>
+            <div class="btn txt-btn">DEL</div>
+            <div class="btn">4</div>
+            <div class="btn">5</div>
+            <div class="btn">6</div>
+            <div class="btn op-btn">+</div>
+            <div class="btn">1</div>
+            <div class="btn">2</div>
+            <div class="btn">3</div>
+            <div class="btn op-btn">-</div>
+            <div class="btn op-btn">.</div>
+            <div class="btn">0</div>
+            <div class="btn op-btn">/</div>
+            <div class="btn op-btn">x</div>
+            <div class="btn txt-btn">RESET</div>
+            <div class="btn result-btn">=</div>
         </div>
     </div>
-    
 </body>
 </html>

@@ -1,3 +1,5 @@
+/*
+
 //Cash of the script
 const display_div = document.querySelector('#display-currentNum');
 const topDisplay_div = document.querySelector('#display-operation');
@@ -156,4 +158,26 @@ function changeSignal(){
         };
     });
 };
+
 changeSignal();
+*/
+
+function changeMode(event) {
+    const body = document.querySelector('body');
+
+    function changeClass(chosenClass) {
+        body.classList = chosenClass;
+    }
+
+    switch(event) {
+        case '1':
+            changeClass('')
+            break;
+        case '2':
+            changeClass('light-mode')
+            break;
+        case '3':
+            changeClass('spooky-mode')
+            break;
+    }
+}

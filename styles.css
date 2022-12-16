@@ -17,6 +17,50 @@
 
     --text-color-1: hsl(221, 14%, 31%);
     --text-color-2: hsl(0, 0%, 100%);
+    --text-color-3: hsl(0, 0%, 100%);
+}
+
+.light-mode {
+    --main-bg: hsl(0, 0%, 90%);
+    --calc-bg: hsl(0, 5%, 81%);
+    --calc-screen-bg: hsl(0, 0%, 93%);
+    
+    --key-color-1: hsl(45, 7%, 89%);
+    --key-color-1-dark: hsl(35, 11%, 61%);
+    --key-color-1-hovered: hsl(0, 0%, 93%);
+
+    --key-color-2: hsl(185, 42%, 37%);
+    --key-color-2-dark: hsl(185, 58%, 25%);
+    --key-color-2-hovered: hsl(184, 35%, 55%);
+
+    --key-color-3: hsl(25, 98%, 40%);
+    --key-color-3-dark: hsl(25, 99%, 27%);
+    --key-color-3-hovered: hsl(25, 72%, 55%);
+
+    --text-color-1: hsl(60, 10%, 19%);
+    --text-color-3: hsl(60, 10%, 19%);
+}
+
+.spooky-mode {
+    --main-bg: hsl(268, 75%, 9%);
+    --calc-bg: hsl(268, 71%, 12%);
+    --calc-screen-bg: hsl(268, 71%, 12%);
+    
+    --key-color-1: hsl(268, 47%, 21%);
+    --key-color-1-dark: hsl(290, 70%, 36%);
+    --key-color-1-hovered: hsl(268, 35%, 38%);
+
+    --key-color-2: hsl(281, 89%, 26%);
+    --key-color-2-dark: hsl(285, 91%, 52%);
+    --key-color-2-hovered: hsl(281, 66%, 63%);
+
+    --key-color-3: hsl(176, 100%, 44%);
+    --key-color-3-dark: sl(177, 92%, 70%);
+    --key-color-3-hovered: hsl(176, 100%, 73%);
+
+    --text-color-1: hsl(52, 100%, 62%);
+    --text-color-2: hsl(0, 0%, 100%);
+    --text-color-3: hsl(52, 100%, 62%);
 }
 
 * {
@@ -32,14 +76,13 @@ body {
     align-items: center;
     justify-content: center;
     background-color: var(--main-bg);
-    color: var(--text-color-2);
+    color: var(--text-color-3);
 }
 
 .calc {
-    width: clamp(300px, 40vw, 450px);
+    width: clamp(280px, 40vw, 400px);
     display: flex;
     flex-direction: column;
-    padding: 20px;
     gap: 20px;
 }
 
@@ -147,6 +190,9 @@ body {
     column-gap: 15px;
     row-gap: 15px;
     text-align: center;
+    background-color: var(--calc-bg);
+    padding: 20px;
+    border-radius: 7px;
 }
 
 .calc--buttons > :nth-child(17) {
@@ -187,43 +233,37 @@ input[type=range] {
     height: 15px;
     cursor: pointer;
     animate: 0.2s;
-    box-shadow: 0px 0px 0px #000000;
-    background: #182034;
+    background: var(--calc-bg);
     border-radius: 10px;
-    border: 0px solid #000000;
     padding-inline: 2px;
   }
   input[type=range]::-webkit-slider-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #D03F2F;
+    border: 0px solid var(--key-color-3);
     height: 11px;
     width: 11px;
     border-radius: 50%;
-    background: #D03F2F;
+    background: var(--key-color-3);
     cursor: pointer;
     -webkit-appearance: none;
     margin-block: 2px;
   }
   input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #182034;
+    background: var(--calc-bg);
   }
   input[type=range]::-moz-range-track {
     width: 100%;
     height: 15px;
     cursor: pointer;
     animate: 0.2s;
-    box-shadow: 0px 0px 0px #000000;
-    background: #182034;
+    background: var(--calc-bg);
     border-radius: 11px;
-    border: 0px solid #000000;
   }
   input[type=range]::-moz-range-thumb {
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #D03F2F;
+    border: 0px solid var(--key-color-3);
     height: 13px;
     width: 13px;
     border-radius: 15px;
-    background: #D03F2F;
+    background: var(--key-color-3);
     cursor: pointer;
   }
   input[type=range]::-ms-track {
@@ -236,30 +276,25 @@ input[type=range] {
     color: transparent;
   }
   input[type=range]::-ms-fill-lower {
-    background: #182034;
-    border: 0px solid #000000;
+    background: var(--calc-bg);
     border-radius: 22px;
-    box-shadow: 0px 0px 0px #000000;
   }
   input[type=range]::-ms-fill-upper {
-    background: #182034;
-    border: 0px solid #000000;
+    background: var(--calc-bg);
     border-radius: 22px;
-    box-shadow: 0px 0px 0px #000000;
   }
   input[type=range]::-ms-thumb {
     margin-top: 1px;
-    box-shadow: 0px 0px 0px #000000;
-    border: 0px solid #D03F2F;
+    border: 0px solid var(--key-color-3);
     height: 13px;
     width: 13px;
     border-radius: 15px;
-    background: #D03F2F;
+    background: var(--key-color-3);
     cursor: pointer;
   }
   input[type=range]:focus::-ms-fill-lower {
-    background: #182034;
+    background: var(--calc-bg);
   }
   input[type=range]:focus::-ms-fill-upper {
-    background: #182034;
+    background: var(--calc-bg);
   }
