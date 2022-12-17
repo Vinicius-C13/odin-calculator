@@ -1,18 +1,16 @@
-/*
-
 //Cash of the script
 const display_div = document.querySelector('#display-currentNum');
 const topDisplay_div = document.querySelector('#display-operation');
-const numbers_button = document.querySelectorAll('.num-button');
-const operators_button = document.querySelectorAll('.op-button');
-const equalTo_button = document.querySelector('#vequ');
-const clearAll_button = document.querySelector('#button-clear')
-const changeSignal_button = document.querySelector('#button-signal')
+const numbers_button = document.querySelectorAll('.num-btn');
+const operators_button = document.querySelectorAll('.op-btn');
+const equalTo_button = document.querySelector('#eq-btn');
+const clearAll_button = document.querySelector('#btn-clear');
+const changeSignal_button = document.querySelector('#btn-signal');
 
 let firstNum ='';
 let secondNum ='';
 let operator = '';
-let total = ''
+let total = '';
 
 //Add a event listener to get the value of all number buttons
 numbers_button.forEach(function(item){
@@ -20,21 +18,24 @@ numbers_button.forEach(function(item){
         if(operator === ''){
             firstNum += e.target.textContent;
             display_div.textContent = firstNum;
+            topDisplay_div.textContent = firstNum;
         }else{
             secondNum += e.target.textContent;
             display_div.textContent = `${firstNum} ${operator} ${secondNum}`;
+            topDisplay_div.textContent = `${firstNum} ${operator} ${secondNum}`;
         }
     });
 });
 //Add a event listener to get the value of all operators buttons
 operators_button.forEach((item)=>{
     item.addEventListener('click',(e)=>{
-        if(firstNum === ''){
+        if(firstNum === '' ){
 
         }
         else{
             operator = e.target.textContent;
             display_div.textContent = `${firstNum} ${operator}`;
+            topDisplay_div.textContent = `${firstNum} ${operator}`;
         }
     });
 });
@@ -86,7 +87,7 @@ function operation(num1, num2, op){
     if(op == ':'){
         return calcDiv(num1,num2);
     };
-    if(op == '%'){
+    if(op == '/'){
         return calcPerCent(num1,num2);
     };
 };
@@ -160,7 +161,6 @@ function changeSignal(){
 };
 
 changeSignal();
-*/
 
 function changeMode(event) {
     const body = document.querySelector('body');
