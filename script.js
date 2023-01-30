@@ -84,16 +84,11 @@ function operation(num1, num2, op){
     if(op == 'x'){
         return calcMult(num1,num2);
     };
-    if(op == ':'){
-        return calcDiv(num1,num2);
-    };
     if(op == '/'){
-        return calcPerCent(num1,num2);
+        return calcDiv(num1,num2);
     };
 };
 
-//When the equal button is pressed this function runs and the operation function is called with
-//all necessary parameters. The account appears on the top of the final result too.
 function execOperation(){
     equalTo_button.addEventListener('click',()=>{
         if(firstNum != ''&& secondNum !=''&& operator!=''){
@@ -104,22 +99,16 @@ function execOperation(){
         };
     });
 };
-//This is necessary to the function runs. Without a a call any function works. 
-//But function are called as a consequence to other function call. 
-//This create a chain reaction that active of functions in sequence.
+
 execOperation()
 
 
-//This function prepare the calculator to the next account without the user do nothing.
-//It's add the last account value to the firstNum and erase the operation and second num values.
-//This is important to let the user make more than one account in series.
 function prepNewOp(lastOpValue){
     firstNum = lastOpValue;
     operator = '';
     secondNum = '';
 }
 
-//This function is conected with the clear button. It's turn all values of the account to undefined.
 function clear(){
     clearAll_button.addEventListener('click',()=>{
         firstNum ='';
@@ -132,16 +121,12 @@ function clear(){
 
 clear()
 
-//This function serves to change the signal of a number. To know how number change the value,
-//this function checks if the operator is already in the account or not and knows witch number is the correct based in this info
-//This function checks if the value is 0 or undefined too, this is important to avoid errors with division by 0.
-
 function changeSignal(){
     changeSignal_button.addEventListener('click', ()=>{
 
         if(operator === ''){
             if(firstNum == 0|| firstNum == ''){
-                console.log('you can\'t change the sign of zero or of an nonexistent number.')
+                alert('you can\'t change the sign of zero or of an nonexistent number.')
             }
             else{
             firstNum *=-1;
@@ -150,7 +135,7 @@ function changeSignal(){
         }
         else{
             if(secondNum == 0|| secondNum == ''){
-                console.log('you can\'t change the sign of zero or of an nonexistent number.')
+                alert('you can\'t change the sign of zero or of an nonexistent number.')
             }
             else{
             secondNum *=-1;
